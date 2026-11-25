@@ -1,0 +1,18 @@
+# bản đóng gói - tự build lại bằng build_exe.bat, không đưa lên GitHub
+dist/
+build/
+*.spec
+
+# Python
+__pycache__/
+*.pyc
+
+# video thử nghiệm (nặng, GitHub giới hạn 100 MB/file)
+*.mp4
+*.mov
+*.mkv
+*.avi
+*.webm
+*.m4v
+*.flv
+*.wmv
