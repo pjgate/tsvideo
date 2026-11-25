@@ -1,0 +1,32 @@
+NÉN VIDEO 1.0 — Giảm dung lượng video, mặc định xuất MP4 dưới 25 MB
+=================================================================
+
+CHẠY APP
+  1. Máy cần có Python 3.8 trở lên (https://www.python.org/downloads/,
+     khi cài nhớ tích "Add python.exe to PATH").
+  2. Nháy đúp run.bat. Lần đầu nó tự cài ffmpeg + thư viện kéo thả (cần mạng, khoảng 1 phút).
+  3. Kéo thả video (hoặc cả thư mục) vào cửa sổ, bấm "Bắt đầu nén".
+
+  Muốn có file .exe để chạy không cần Python (hoặc mang sang máy khác):
+  nháy đúp build_exe.bat → app nằm ở dist\NenVideo\NenVideo.exe
+
+MẶC ĐỊNH
+  • Mỗi video ra file MP4 dưới 25 MB (tính chặt 25.000.000 byte, gửi Zalo / Messenger /
+    Discord / Gmail đều lọt).
+  • Video dài: app tự hạ độ phân giải (1080p → 720p → 480p) để hình không bị vỡ.
+  • Nén xong app tự kiểm tra lại; lỡ vượt 25 MB thì tự nén lại cho vừa.
+  • MP4 nào vốn đã dưới 25 MB thì giữ nguyên, không nén lại.
+  • File gốc không bị đụng tới. Bản nén nằm cạnh file gốc: "ten_goc_danen.mp4".
+
+TÙY CHỈNH (cột bên phải, app tự nhớ cho lần sau)
+  • Theo dung lượng: đổi 25 thành số MB khác, hoặc bấm nhanh 10 / 25 / 50 / 100 MB.
+  • Theo chất lượng: Đẹp / Cân bằng / Nhẹ nhất (không giới hạn MB).
+  • H.265: nhẹ hơn ~30–40% nhưng máy đời cũ có thể không phát được.
+  • Dùng card đồ hoạ (NVIDIA / Intel / AMD): nhanh gấp nhiều lần, chỉ dùng ở chế độ chất lượng.
+  • Tùy chọn ▾ → "Thêm vào chuột phải › Gửi tới": chọn video trong thư mục, chuột phải →
+    Gửi tới (Send to) → Nén Video. (Windows 11: "Hiện thêm tùy chọn" hoặc giữ Shift.)
+  • Tùy chọn ▾ → "Khôi phục cài đặt mặc định" để quay về MP4 dưới 25 MB.
+
+KHI GẶP LỖI
+  • "Thiếu ffmpeg": chạy lại run.bat, hoặc mở cmd gõ  pip install imageio-ffmpeg
+  • App không mở được: xem file %TEMP%\nenvideo_error.log
